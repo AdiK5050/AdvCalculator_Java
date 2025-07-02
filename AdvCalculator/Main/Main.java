@@ -31,10 +31,9 @@ class Main
                 try
                 {
                     ch = sc.nextInt();
-                    if(ch < 0 && ch > 5)
+                    if(!(ch > 0 && ch <= 5))
                         throw new InputMismatchException();
                     sc.nextLine();
-                        
                 }
                 catch(InputMismatchException e)
                 {
@@ -75,7 +74,7 @@ class Main
                     case 5:
                     System.out.println("This feature not available. Coming soon...");
                     break;
-                } 
+                }
             }while(ch != 0);
         }
     }

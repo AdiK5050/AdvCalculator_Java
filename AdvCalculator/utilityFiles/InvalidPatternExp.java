@@ -12,6 +12,6 @@ public class InvalidPatternExp extends Exception
     @Override 
     public String toString()
     {
-        return "Invalid Patter!! Please specify symbols as directed";
+        return "Invalid Pattern!! Please specify symbols as directed";
     }
 }
