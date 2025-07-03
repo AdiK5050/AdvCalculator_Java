@@ -1,6 +1,6 @@
-package AdvCalculator.out.oprFiles;
+package io.AdiK5050.advCalculator.out.operators;
 
-import AdvCalculator.out.utilityFiles.MaxInputExp;
+import io.AdiK5050.advCalculator.out.utilities.MaximumInputReachedException;
 
 /**
  * This class contains a method "sub()" which returns the difference of elements of the array passed as argument.
@@ -24,30 +24,22 @@ public class Subtraction
      * => diff = 4 - 2 (else-block executed)
      * => diff = 2 and so on... 
      * For loop helps to subtract and store every element of the array passed as an argument.
-     * This method throws "MaxInputExp" exception predefined in it's class.
+     * @throws MaximumInputReachedException
      * @param arr This takes a an array of double type and returns the difference.
      */
-    public double sub(double... arr)
+    public double sub(double... arr) throws MaximumInputReachedException
     {
         int i;
         double diff = 0;
         for(i = 0; i < arr.length; i++)
         {
-            try
-            {
-                if(arr[i] > 100000.0)
-                    throw new MaxInputExp();
+            if(arr[i] > 100000.0)
+                    throw new MaximumInputReachedException();
+            else 
+                if(diff < arr[i])
+                    diff = arr[i] - diff;
                 else 
-                    if(diff < arr[i])
-                        diff = arr[i] - diff;
-                    else 
-                        diff = diff - arr[i];
-            }
-            catch(MaxInputExp e)
-            {
-                System.out.println(e.toString());
-                return -1;
-            }
+                    diff = diff - arr[i];
         }
         return diff;
     }

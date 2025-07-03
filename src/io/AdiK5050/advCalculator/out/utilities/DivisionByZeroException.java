@@ -1,10 +1,10 @@
-package AdvCalculator.out.utilityFiles;
+package io.AdiK5050.advCalculator.out.utilities;
 import java.lang.Exception;
 
 /**
  * This class handles Exceptions where User tries to divide any number by Zero "0"
  */
-public class DivByZeroExp extends Exception
+public class DivisionByZeroException extends Exception
 {
     /**
      * Returns a String (Overridden from Exception class)

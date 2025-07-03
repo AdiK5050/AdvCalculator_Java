@@ -1,7 +1,6 @@
-package AdvCalculator.out.oprFiles;
+package io.AdiK5050.advCalculator.out.operators;
 
-import AdvCalculator.out.utilityFiles.DivByZeroExp;
-
+import io.AdiK5050.advCalculator.out.utilities.DivisionByZeroException;
 /**
  * This class contains a method "div()" which returns the division of elements of the array passed as argument.
  */
@@ -24,33 +23,24 @@ public class Division
      * => div = 20 / 5 (if-block executed)
      * => div = 4 and so on... 
      * For loop helps to subtract and store every element of the array passed as an argument.
-     * This method throws "DivByzeroExp" exception predefined in it's class.
+     * @throws "DivisionByZeroException" exception predefined in it's class.
      * @param arr This takes a an array of double type and returns the division.
      */
-    public double div(double... arr)
+    public double div(double... arr) throws DivisionByZeroException
     {
         int i; 
         double div = 1;
         for(i = 0; i < arr.length; i++)
         {
-            try
-            {
-                if(arr[i] <= 0)
-                    throw new DivByZeroExp();
+            if(arr[i] <= 0)
+                throw new DivisionByZeroException();
 
-                else 
-                    if(div < arr[i])
-                        div = arr[i] / div;
-                    else
-                        div = div / arr[i];
-                   
-            }
-            catch(DivByZeroExp e)
-            {
-                System.out.println(e.toString());
-                return -1;
-            }
+            else 
+                if(div < arr[i])
+                    div = arr[i] / div;
+                else
+                    div = div / arr[i];
         }
-        return div;
+            return div;
     }
 }

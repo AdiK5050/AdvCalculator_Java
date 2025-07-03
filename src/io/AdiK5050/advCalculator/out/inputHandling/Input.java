@@ -1,4 +1,4 @@
-package AdvCalculator.out.InputHandling;
+package io.AdiK5050.advCalculator.out.inputHandling;
 
 import java.util.ArrayList;
 import java.util.Scanner;

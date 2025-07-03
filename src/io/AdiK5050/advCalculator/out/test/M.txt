@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.lang.StringBuilder;
+import java.util.ArrayList;
+import AdvCalculator.out.utilityFiles.InvalidPatternExp;
+public class M
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter");
+        String input = sc.nextLine();
+        System.out.println(input);
+        String[] tokens = input.trim().split("");
+        StringBuilder number = new StringBuilder();
+        ArrayList<String> finalTokens = new ArrayList<>();
+        for(String e: tokens)
+            {
+                try
+                {
+                    if(Character.isDigit(e.charAt(0)) || e.charAt(0) == '.')
+                    {
+                        number.append(e);
+                    }  
+                    else if(e.charAt(0) == '+' || e.charAt(0) == '-'|| e.charAt(0) == '*'|| e.charAt(0) == '/' || e.charAt(0) == '(' || e.charAt(0) == ')' )
+                    {
+                        if(number.length() > 0)
+                        {
+                            finalTokens.add(number.toString());
+                            number.setLength(0);
+                        }
+
+                        finalTokens.add(e.toString());
+                    } 
+                    else if(e.charAt(0) == ' ')
+                        continue;
+                    else
+                        throw new InvalidPatternExp();  
+                }
+                catch(InvalidPatternExp exp)
+                {
+                    System.out.println(exp.toString());
+                    break;
+                }
+            }
+        if(number.length() > 0)
+        {
+            finalTokens.add(number.toString());
+            number.setLength(0);
+        }
+
+        for(String e : finalTokens)
+            System.out.println(e);
+
+    }
+}
