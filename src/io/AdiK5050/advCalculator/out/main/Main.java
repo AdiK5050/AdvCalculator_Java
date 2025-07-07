@@ -2,8 +2,8 @@ package io.AdiK5050.advCalculator.out.main;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
-import io.AdiK5050.advCalculator.out.utilities.*;
-import io.AdiK5050.advCalculator.out.inputHandling.Input;
+//import io.AdiK5050.advCalculator.out.utilities.*;
+import io.AdiK5050.advCalculator.out.inputHandling.*;
 import io.AdiK5050.advCalculator.out.operators.*;
 
 /**
@@ -25,11 +25,11 @@ class Main
             
             do
             {
-                System.out.println("Press 1 to Add multiple numbers\nPress 2 to Subtract multiple numbers\nPress 3 to Divide multiple numbers\nPress 4 to Multiply multiple numbers\nPress 5 to solve an expression \nPress 0 to exit");
+                System.out.println("\nPress 1 to Add multiple numbers\nPress 2 to Subtract multiple numbers\nPress 3 to Divide multiple numbers\nPress 4 to Multiply multiple numbers\nPress 5 to solve an expression \nPress 0 to exit");
                 try
                 {
                     ch = sc.nextInt();
-                    if(!(ch > 0 && ch <= 5))
+                    if(ch < 0 && ch >= 5)
                         throw new InputMismatchException();
                     sc.nextLine();
                 }
@@ -71,13 +71,15 @@ class Main
                         break;
 
                         case 5:
-                        System.out.println("This feature not available. Coming soon...");
+                        ShuntingYardEvaluation objPostfixEvaluation = new ShuntingYardEvaluation(sc);
+                        objPostfixEvaluation.inputExpression();
+                        objPostfixEvaluation.toPostfix();
+                        objPostfixEvaluation.evaluateExpression();
                         break;
                     }
                 }catch(Exception e){
                     System.out.println(e.toString());
                 }
-                
             }while(ch != 0);
         }
     }

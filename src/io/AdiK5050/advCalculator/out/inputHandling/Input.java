@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Input
 {
     public ArrayList<Double> arrDouble = new ArrayList<>();
+    
     public double[] arr;
     public Scanner sc;
 
@@ -63,26 +64,25 @@ public class Input
                     } 
                     else
                     {
+                        try
                         {
-                            try
-                            {
-                                double num = Double.parseDouble(token);
-                                arrDouble.add(num);
-                            }
-                            catch(Exception e)
-                            {
-                                System.out.println("Invalid Input!! Enter only Numbers(whole or decimal) Or 'stop' to get result");
-                                count++;
-                                sc.nextLine();
-                            }
+                            double num = Double.parseDouble(token);
+                            arrDouble.add(num);
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("Invalid Input!! Enter only Numbers(whole or decimal) Or 'stop' to get result");
+                            count++;
+                            sc.nextLine();
                         }
                     }
                 }
-                catch(Exception e)
+                catch(Exception e1)
                 {
-                    e.printStackTrace();
+                    e1.printStackTrace();
                 }
             }
         }
     }
+    
 }
