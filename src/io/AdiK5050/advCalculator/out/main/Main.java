@@ -71,7 +71,7 @@ class Main
                         break;
 
                         case 5:
-                        ShuntingYardEvaluation objPostfixEvaluation = new ShuntingYardEvaluation(sc);
+                        ExpressionEvaluation objPostfixEvaluation = new ExpressionEvaluation(sc);
                         objPostfixEvaluation.inputExpression();
                         objPostfixEvaluation.toPostfix();
                         objPostfixEvaluation.evaluateExpression();

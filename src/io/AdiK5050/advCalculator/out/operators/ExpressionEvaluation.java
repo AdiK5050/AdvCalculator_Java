@@ -4,7 +4,7 @@ import java.util.*;
 import io.AdiK5050.advCalculator.out.inputHandling.InputExpression;
 import io.AdiK5050.advCalculator.out.utilities.InvalidPatternException;
 
-public class ShuntingYardEvaluation extends InputExpression
+public class ExpressionEvaluation extends InputExpression
 {
     
     public static final Map<String, Integer> precedence = new HashMap<>();
@@ -17,7 +17,7 @@ public class ShuntingYardEvaluation extends InputExpression
     precedence.put("*" , 2);
     precedence.put("/" , 2);
     }
-    public ShuntingYardEvaluation(Scanner sc)
+    public ExpressionEvaluation(Scanner sc)
     {
         super(sc);
     }
