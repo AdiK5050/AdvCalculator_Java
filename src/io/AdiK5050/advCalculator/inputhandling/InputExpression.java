@@ -1,10 +1,10 @@
-package io.AdiK5050.advCalculator.inputHandling;
+package io.AdiK5050.advCalculator.inputhandling;
 
 import java.util.*;
 import io.AdiK5050.advCalculator.utilities.InvalidPatternException;
 /**
- * This class takes Expression Inputs as String Input then parse them into Numbers(double), Operators and Braces.
- * It stores them into Arraylist of type-String
+ * This class takes Expression Inputs as Strings then parse them into Numbers, Operators and Braces.
+ * It stores the parsed Strings into Arraylist of type-String
  */
 public class InputExpression{
 
@@ -15,12 +15,9 @@ public class InputExpression{
     }
 
     /**
-     * @param input it takes user input(an expression) as a String.
-     * @param tokens it tokenise the expression into characters.
-     * @param number it builds the number digit by digit and stores them until an operator is encountered.
-     * @param startBraceCount it keeps count of number of opening braces to check validity of the expression
-     * @param endBraceCount it keeps count of number of closing braces to check validity of the expression
-     * @throws InvalidPatternException
+     * This method takes Expression Input and stores then in the arraylist finalTokens
+     *
+     * @throws InvalidPatternException user-defined exception.
      */
     public void inputExpression() throws InvalidPatternException
     {

@@ -1,13 +1,10 @@
 package io.AdiK5050.advCalculator.operators;
 
 import java.util.*;
-import io.AdiK5050.advCalculator.inputHandling.InputExpression;
+import io.AdiK5050.advCalculator.inputhandling.InputExpression;
 import io.AdiK5050.advCalculator.utilities.InvalidPatternException;
 /**
  * This class Processes expression from Infix to Postfix and evaluates the final result.
- * @param precedence this is a Map used to keep precedence of operators.
- * @param postfixOutput this stores the postfix-ed expression.
- * @extends InputExpression
  */
 public class ExpressionEvaluation extends InputExpression{
     
@@ -21,15 +18,17 @@ public class ExpressionEvaluation extends InputExpression{
     precedence.put("/" , 2);
     }
     /**
-     * This is the class constructor used to call the super-class constructor
-     * @param sc
+     * This is the class constructor used to call the super-class constructor.
+     *
+     * @param sc takes scanner object.
      */
     public ExpressionEvaluation(Scanner sc){
         super(sc);
     }
 
     /**
-     * This class parse argument into double returns true if the argument passed is a number or else returns false.
+     * This method parse argument into double returns true if the argument passed is a number or else returns false.
+     *
      * @param token this takes String input.
      * @return boolean
      */
@@ -43,6 +42,7 @@ public class ExpressionEvaluation extends InputExpression{
     }
     /**
      * This class returns true if the argument passed is the key in the Map defined as class member.
+     *
      * @param token this takes String input.
      * @return boolean
      */
@@ -51,9 +51,8 @@ public class ExpressionEvaluation extends InputExpression{
     }
     /**
      * This method converts the infix expression into postfix expression
-     * @param stack this stores the operators to pop them according to their precedence
-     * @param postFixing stores the postfix-ed expression
-     * @throws InvalidPatternException
+     *
+     * @throws InvalidPatternException user-defined exception.
      */
     public void toPostfix() throws InvalidPatternException{
         Stack<String> stack = new Stack<>();
@@ -89,11 +88,11 @@ public class ExpressionEvaluation extends InputExpression{
     }
 
     /**
-     * This method evaluates the postfix-ed expression and returns the final result
-     * @param stack this stores the numbers for evaluation
+     * This method evaluates the postfix-ed expression and returns the final result.
+     *
      * @return double.
-     * @throws IllegalArgumentException
-     * @throws InvalidPatternException
+     * @throws IllegalArgumentException exception.
+     * @throws InvalidPatternException user-defined exception.
      */
     public double evaluateExpression() throws IllegalArgumentException, InvalidPatternException{
         Stack<Double> stack = new Stack<>();

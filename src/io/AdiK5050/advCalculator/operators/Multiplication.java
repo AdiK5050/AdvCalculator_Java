@@ -8,10 +8,13 @@ import io.AdiK5050.advCalculator.utilities.MaximumMultiplierReachedException;
 public class Multiplication
 {
     /**
-     * The Multiplication occurs simple and straight. Each elements is multiplied with the variable "mul" and "mul" stores the result.
+     * Returns the final result of multiplication
+     * The Multiplication occurs simple and straight. Each element is multiplied with the variable "mul" and "mul" stores the result.
      * For loop helps to multiply and store every element of the array passed as an argument.
-     * @param arr This takes a an array of double type and returns the product.
-     * @throws MaximumMultiplierReachedException
+     *
+     * @param arr This takes an array of double type and returns the product.
+     * @throws MaximumMultiplierReachedException user-defined exception.
+     * @return double
      */
     public double mul(double... arr) throws MaximumMultiplierReachedException
     {

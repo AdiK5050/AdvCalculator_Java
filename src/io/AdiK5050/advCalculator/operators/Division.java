@@ -7,24 +7,27 @@ import io.AdiK5050.advCalculator.utilities.DivisionByZeroException;
 public class Division
 {
     /**
+     * Returns the final result of division
      * The division occurs with the logic that smaller element always divides bigger one so the final answer will always be greater than 1
      * For detailed information consider the following example:-
-     * Let's say the array elements are 10, 50, 20 and 90; variable div initaialised with zero... 
+     * Let's say the array elements are <code>10, 50, 20 and 90;</code> variable div initialized with zero...
      * Every iteration will compare the element with value of div at that instant.
-     * For example for the first iteration div = 1 and arr[i] = 10; 1 < 10 is true,
-     * => div = 10 / 1 (if-block executed)
-     * => div = 10
+     * For example for the first iteration <code>div = 1</code> and <code>arr[i] = 10; 1 	&lt; 10</code> is true,
+     * => <code>div = 10 / 1</code> (if-block executed)
+     * => <code>div = 10</code>
      * Similarly, second iteration executes as such:-
-     * div = 10, arr[i] = 50; 10 < 50 is true,
-     * => div = 50 / 10 (if-block executed)
-     * => div = 5
+     *<code> div = 10, arr[i] = 50; 10 &lt;</code> 50 is true,
+     * <code>=> div = 50 / 10</code> (if-block executed)
+     * <code>=> div = 5</code>
      * Similarly, third iteration executes as such:-
-     * div = 5, arr[i] = 20; 5 < 20 is true, 
-     * => div = 20 / 5 (if-block executed)
-     * => div = 4 and so on... 
+     * <code>div = 5, arr[i] = 20; 5 	&lt; 20</code> is true,
+     * <code>=> div = 20 / 5 </code>(if-block executed)
+     * <code>=> div = 4</code> and so on...
      * For loop helps to subtract and store every element of the array passed as an argument.
-     * @param arr This takes a an array of double type and returns the division.
-     * @throws "DivisionByZeroException" exception predefined in it's class.
+     *
+     * @param arr This takes an array of double type and returns the division.
+     * @throws DivisionByZeroException user-defined exception.
+     * @return double.
      */
     public double div(double... arr) throws DivisionByZeroException
     {

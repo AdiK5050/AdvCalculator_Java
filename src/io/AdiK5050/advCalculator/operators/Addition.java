@@ -7,10 +7,13 @@ import io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
 public class Addition 
 {
     /**
-     * The Addition occurs simple and straight. Each elements is added with the variable "sum" and "sum" stores the result.
+     * Returns the final result of addition
+     * The Addition occurs simple and straight. Each element is added with the variable "sum" and "sum" stores the result.
      * For loop helps to add and store every element of the array passed as an argument.
-     * @param arr This takes a an array of double type and returns the sum.
-     * @throws MaximumInputReachedException 
+     *
+     * @param arr This takes an array of double type and returns the sum.
+     * @throws MaximumInputReachedException user-defined exception.
+     * @return double
      */
     public double add(double... arr) throws MaximumInputReachedException
     {

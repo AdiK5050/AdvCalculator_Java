@@ -1,6 +1,7 @@
-package io.AdiK5050.advCalculator.inputHandling;
+package io.AdiK5050.advCalculator.inputhandling;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,25 +22,32 @@ public class Input{
 
     /**
      * This method parses the string input from the user to tokens of double type.
-     * @param arr stores the double values to operate on.
      */
     public void getToArr(){
         arr = arrDouble.stream().mapToDouble(Double :: doubleValue).toArray();
     }
 
     /**
-     * This method takes user input in specified format such that number inputs are given then "stop" is passed as input to stop adding more number inputs.
-     * Formats acceptable:- 
+     * Takes User Input.
+     * This method takes user input in specified format such that number inputs are given then "stop" is passed as input to stop adding more inputs.
+     * Formats acceptable:-
+     * <p>
      * 1 5 2 9 'enter key pressed'
-     * 'enter key pressed'
+     * <p>
+     * 'enter key pressed
+     * <p>
      * output
-     * 
+     * <p>
      * OR,
-     * 10
+     * <p>
      * 50
+     * <p>
      * 20
+     * <p>
      * 90'enter key pressed'
+     * <p>
      * 'enter key pressed'
+     * <p>
      * output
      */
     public void addElements(){
@@ -65,11 +73,10 @@ public class Input{
                             sc.nextLine();
                         }
                     }
-                }catch(Exception e1){
-                    e1.printStackTrace();
+                }catch(InputMismatchException e1){
+                    System.out.println(e1);
                 }
             }
         }
     }
-    
 }
