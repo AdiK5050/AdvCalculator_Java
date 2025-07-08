@@ -1,6 +1,6 @@
-package io.AdiK5050.advCalculator.out.operators;
+package io.AdiK5050.advCalculator.operators;
 
-import io.AdiK5050.advCalculator.out.utilities.MaximumInputReachedException;
+import io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
 /**
  * This class contains a method "add()" which returns the sum of elements of the array passed as argument.
  */
@@ -8,9 +8,9 @@ public class Addition
 {
     /**
      * The Addition occurs simple and straight. Each elements is added with the variable "sum" and "sum" stores the result.
-     * @throws MaximumInputReachedException 
      * For loop helps to add and store every element of the array passed as an argument.
      * @param arr This takes a an array of double type and returns the sum.
+     * @throws MaximumInputReachedException 
      */
     public double add(double... arr) throws MaximumInputReachedException
     {

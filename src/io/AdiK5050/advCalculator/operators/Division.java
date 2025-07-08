@@ -1,6 +1,6 @@
-package io.AdiK5050.advCalculator.out.operators;
+package io.AdiK5050.advCalculator.operators;
 
-import io.AdiK5050.advCalculator.out.utilities.DivisionByZeroException;
+import io.AdiK5050.advCalculator.utilities.DivisionByZeroException;
 /**
  * This class contains a method "div()" which returns the division of elements of the array passed as argument.
  */
@@ -23,8 +23,8 @@ public class Division
      * => div = 20 / 5 (if-block executed)
      * => div = 4 and so on... 
      * For loop helps to subtract and store every element of the array passed as an argument.
-     * @throws "DivisionByZeroException" exception predefined in it's class.
      * @param arr This takes a an array of double type and returns the division.
+     * @throws "DivisionByZeroException" exception predefined in it's class.
      */
     public double div(double... arr) throws DivisionByZeroException
     {

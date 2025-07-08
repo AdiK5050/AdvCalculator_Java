@@ -1,21 +1,21 @@
-package io.AdiK5050.advCalculator.out.operators;
+package io.AdiK5050.advCalculator.operators;
 
-import io.AdiK5050.advCalculator.out.utilities.MaximumMultiplierReachedException;
+import io.AdiK5050.advCalculator.utilities.MaximumMultiplierReachedException;
 
 /**
- * This class contains a method "mul()" to returns the product of elements of the array passed as argument
+ * This class contains a method "mul()" to returns the product of elements of the array passed as argument.
  */
 public class Multiplication
 {
     /**
      * The Multiplication occurs simple and straight. Each elements is multiplied with the variable "mul" and "mul" stores the result.
-     * @throws MaximumMultiplierReachedException
      * For loop helps to multiply and store every element of the array passed as an argument.
      * @param arr This takes a an array of double type and returns the product.
+     * @throws MaximumMultiplierReachedException
      */
     public double mul(double... arr) throws MaximumMultiplierReachedException
     {
-        int i; 
+        int i;
         double mul = 1;
 
         for(i = 0; i < arr.length; i++)
@@ -24,7 +24,6 @@ public class Multiplication
                     throw new MaximumMultiplierReachedException();
             else 
                 mul *= arr[i];
-                
         }   
         return mul;
     }

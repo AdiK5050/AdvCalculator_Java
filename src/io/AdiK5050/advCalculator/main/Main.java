@@ -1,47 +1,40 @@
-package io.AdiK5050.advCalculator.out.main;
+package io.AdiK5050.advCalculator.main;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
-//import io.AdiK5050.advCalculator.out.utilities.*;
-import io.AdiK5050.advCalculator.out.inputHandling.*;
-import io.AdiK5050.advCalculator.out.operators.*;
+import io.AdiK5050.advCalculator.inputHandling.*;
+import io.AdiK5050.advCalculator.operators.*;
 
 /**
  * This class contains the main method which deals with the user's choice utility to help interact with the calculator with ease.
  */
-class Main
-{
+class Main{
     /**
      * Users are supposed to input as directed. Integers from 0 to 5 to select calculation method or exit the program.
-     * @param args this takes command-line arguements
-     * This method throws "InputMismatchException" exception.
+     * @param args this takes command-line arguements.
+     * @param ch this takes input for the user's choice.
+     * @throws InputMismatchException exception.
      */
-    public static void main(String args[])
-    {
-        try(Scanner sc = new Scanner(System.in))
-        {
+    public static void main(String args[]){
+        try(Scanner sc = new Scanner(System.in)){
             Input objIn = new Input(sc);
             int ch = 0;
             
-            do
-            {
+            do{
                 System.out.println("\nPress 1 to Add multiple numbers\nPress 2 to Subtract multiple numbers\nPress 3 to Divide multiple numbers\nPress 4 to Multiply multiple numbers\nPress 5 to solve an expression \nPress 0 to exit");
-                try
-                {
+                try{
                     ch = sc.nextInt();
                     if(ch < 0 && ch >= 5)
                         throw new InputMismatchException();
                     sc.nextLine();
                 }
-                catch(InputMismatchException e)
-                {
+                catch(InputMismatchException e){
                     System.out.println("Invalid Input!! Enter a valid Integer From 0 to 5...");
                     sc.nextLine();
                 }
 
                 try{
-                    switch(ch)
-                    {
+                    switch(ch){
                         case 1: 
                         objIn.addElements();
                         objIn.getToArr();
@@ -74,7 +67,7 @@ class Main
                         ExpressionEvaluation objPostfixEvaluation = new ExpressionEvaluation(sc);
                         objPostfixEvaluation.inputExpression();
                         objPostfixEvaluation.toPostfix();
-                        objPostfixEvaluation.evaluateExpression();
+                        System.out.println("\nResult: " + objPostfixEvaluation.evaluateExpression());
                         break;
                     }
                 }catch(Exception e){

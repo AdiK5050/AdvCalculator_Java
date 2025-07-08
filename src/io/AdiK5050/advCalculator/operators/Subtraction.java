@@ -1,6 +1,6 @@
-package io.AdiK5050.advCalculator.out.operators;
+package io.AdiK5050.advCalculator.operators;
 
-import io.AdiK5050.advCalculator.out.utilities.MaximumInputReachedException;
+import io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
 
 /**
  * This class contains a method "sub()" which returns the difference of elements of the array passed as argument.
@@ -24,8 +24,8 @@ public class Subtraction
      * => diff = 4 - 2 (else-block executed)
      * => diff = 2 and so on... 
      * For loop helps to subtract and store every element of the array passed as an argument.
-     * @throws MaximumInputReachedException
      * @param arr This takes a an array of double type and returns the difference.
+     * @throws MaximumInputReachedException
      */
     public double sub(double... arr) throws MaximumInputReachedException
     {

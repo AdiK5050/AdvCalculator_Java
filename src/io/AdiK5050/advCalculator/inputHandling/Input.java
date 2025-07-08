@@ -1,4 +1,4 @@
-package io.AdiK5050.advCalculator.out.inputHandling;
+package io.AdiK5050.advCalculator.inputHandling;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,26 +6,24 @@ import java.util.Scanner;
 /**
  * This class contains the code to take numbers user input and apply desired operation(add/subtract/multiply/divide).
  */
-public class Input
-{
+public class Input{
     public ArrayList<Double> arrDouble = new ArrayList<>();
     
     public double[] arr;
     public Scanner sc;
 
     /**
-     * @param sc this takes scanner object as argument to enable number input for the user
+     * @param sc this takes scanner object as argument to enable number input for the user.
      */
-    public Input(Scanner sc)
-    {
+    public Input(Scanner sc){
         this.sc = sc;
     }
 
     /**
-     * This method parses the string input from the user to tokens of double type
+     * This method parses the string input from the user to tokens of double type.
+     * @param arr stores the double values to operate on.
      */
-    public void getToArr()
-    {
+    public void getToArr(){
         arr = arrDouble.stream().mapToDouble(Double :: doubleValue).toArray();
     }
 
@@ -44,41 +42,30 @@ public class Input
      * 'enter key pressed'
      * output
      */
-    public void addElements()
-    {
+    public void addElements(){
         boolean flag = true;
         int count = 0;
         System.out.println("Enter the numbers then press 'enter key' twice:- \nFor info in result evaluation refer to documentation");
         
-        while(flag && count < 3)
-        {
-            String in = sc.nextLine();
-            String[] tokens = in.trim().split("\\s+");
-            for(String token : tokens)
-            {
-                try
-                {
-                    if(token.trim().isEmpty())
-                    {
+        while(flag && count < 3){
+            String input = sc.nextLine();
+            String[] tokens = input.trim().split("\\s+");
+            for(String token : tokens){
+                try{
+                    if(token.trim().isEmpty()){
                             flag = false;
                     } 
-                    else
-                    {
-                        try
-                        {
+                    else{
+                        try{
                             double num = Double.parseDouble(token);
                             arrDouble.add(num);
-                        }
-                        catch(Exception e)
-                        {
-                            System.out.println("Invalid Input!! Enter only Numbers(whole or decimal) Or 'stop' to get result");
+                        }catch(Exception e){
+                            System.out.println("Invalid Input!! Enter only Numbers(whole or decimal)");
                             count++;
                             sc.nextLine();
                         }
                     }
-                }
-                catch(Exception e1)
-                {
+                }catch(Exception e1){
                     e1.printStackTrace();
                 }
             }
