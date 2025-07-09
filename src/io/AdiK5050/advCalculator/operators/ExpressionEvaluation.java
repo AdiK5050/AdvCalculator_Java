@@ -104,7 +104,7 @@ public class ExpressionEvaluation extends InputExpression{
                 stack.push(Double.parseDouble(token));
             
             else if(isOperator(token)){
-                if(stack.size() < 2 || stack.size() <= 0)
+                if(stack.size() < 2)
                     throw new IllegalArgumentException("Not Enough operands for the operator: " + token);
                 double b = stack.pop();
                 double a = stack.pop();
