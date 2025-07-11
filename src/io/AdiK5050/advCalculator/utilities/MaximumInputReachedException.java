@@ -4,7 +4,7 @@ import java.lang.Exception;
 /**
  * This class handles Exceptions where User inputs a very big value.
  */
-public class MaximumInputReachedException extends Exception
+public class MaximumInputReachedException extends ApplicationException
 {
     /**
      * Returns a String (Overridden from Exception class).

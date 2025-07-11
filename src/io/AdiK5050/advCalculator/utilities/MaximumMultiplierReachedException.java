@@ -4,7 +4,7 @@ import java.lang.Exception;
 /**
  * This Class handles Exceptions where User inputs a very big value for Multiplication.
  */
-public class MaximumMultiplierReachedException extends Exception
+public class MaximumMultiplierReachedException extends ApplicationException
 {
     /**
      * Returns a String (Overridden from Exception class).
