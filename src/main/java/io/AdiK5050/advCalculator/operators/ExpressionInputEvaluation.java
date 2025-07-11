@@ -1,12 +1,12 @@
-package io.AdiK5050.advCalculator.operators;
+package main.java.io.AdiK5050.advCalculator.operators;
 
 import java.util.*;
-import io.AdiK5050.advCalculator.inputhandling.InputExpression;
-import io.AdiK5050.advCalculator.utilities.InvalidPatternException;
+import main.java.io.AdiK5050.advCalculator.inputhandling.ExpressionInput;
+import main.java.io.AdiK5050.advCalculator.utilities.InvalidPatternException;
 /**
  * This class Processes expression from Infix to Postfix and evaluates the final result.
  */
-public class ExpressionEvaluation extends InputExpression{
+public class ExpressionInputEvaluation extends ExpressionInput {
     
     public static final Map<String, Integer> precedence = new HashMap<>();
     public String postfixOutput = new String();
@@ -22,7 +22,7 @@ public class ExpressionEvaluation extends InputExpression{
      *
      * @param sc takes scanner object.
      */
-    public ExpressionEvaluation(Scanner sc){
+    public ExpressionInputEvaluation(Scanner sc){
         super(sc);
     }
 

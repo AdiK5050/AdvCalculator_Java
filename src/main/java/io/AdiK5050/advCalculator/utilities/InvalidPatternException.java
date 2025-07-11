@@ -1,11 +1,9 @@
-package io.AdiK5050.advCalculator.utilities;
-import java.lang.Exception;
+package main.java.io.AdiK5050.advCalculator.utilities;
 
 /**
  * This class handles Exception where User input invalid pattern for Mixed-Calculation.
  */
-public class InvalidPatternException extends Exception
-{
+public class InvalidPatternException extends ApplicationException {
     /**
      * Returns a String (Overridden from Exception class).
      */

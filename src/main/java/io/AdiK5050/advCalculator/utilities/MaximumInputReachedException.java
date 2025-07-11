@@ -1,11 +1,9 @@
-package io.AdiK5050.advCalculator.utilities;
-import java.lang.Exception;
+package main.java.io.AdiK5050.advCalculator.utilities;
 
 /**
  * This class handles Exceptions where User inputs a very big value.
  */
-public class MaximumInputReachedException extends Exception
-{
+public class MaximumInputReachedException extends ApplicationException {
     /**
      * Returns a String (Overridden from Exception class).
      */

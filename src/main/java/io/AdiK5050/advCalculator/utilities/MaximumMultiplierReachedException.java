@@ -1,11 +1,9 @@
-package io.AdiK5050.advCalculator.utilities;
-import java.lang.Exception;
+package main.java.io.AdiK5050.advCalculator.utilities;
 
 /**
  * This Class handles Exceptions where User inputs a very big value for Multiplication.
  */
-public class MaximumMultiplierReachedException extends Exception
-{
+public class MaximumMultiplierReachedException extends ApplicationException {
     /**
      * Returns a String (Overridden from Exception class).
      */

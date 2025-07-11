@@ -1,5 +1,5 @@
 bin/
-src/io/AdiK5050/advCalculator/test/
+src/main/java/io/AdiK5050/advCalculator/test/
 .idea/
 out/
 /AdvCalculator.iml
