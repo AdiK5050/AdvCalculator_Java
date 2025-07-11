@@ -21,7 +21,7 @@ public class ApplicationImpl implements Application {
             int choice;
 
             do {
-                choice = expressionChoiceInput.getUserInput(sc);
+                choice = expressionChoiceInput.getUserInput();
                 try {
                     switch (choice) {
                         case 1:
