@@ -10,12 +10,22 @@ import java.util.Scanner;
 public class ExpressionChoiceTest {
 
     @Test
-    public void expressionChoiceTest(){
-        Scanner sc = new Scanner("0");
+    public void expressionChoiceOneTest(){
+        Scanner sc = new Scanner("0\n");
 
-        ExpressionChoiceInput expressionChoiceInputFromScanner = new ExpressionChoiceInputFromScanner();
-        int choice = expressionChoiceInputFromScanner.getUserInput(sc);
+        ExpressionChoiceInput expressionChoiceInputFromScanner = new ExpressionChoiceInputFromScanner(sc);
+        int choice = expressionChoiceInputFromScanner.getUserInput();
 
         Assertions.assertEquals(0, choice);
+    }
+
+    @Test
+    public void expressionChoiceTwoTest(){
+        Scanner sc = new Scanner("3\n");
+
+        ExpressionChoiceInput expressionChoiceInputFromScanner = new ExpressionChoiceInputFromScanner(sc);
+        int choice = expressionChoiceInputFromScanner.getUserInput();
+
+        Assertions.assertEquals(3, choice);
     }
 }

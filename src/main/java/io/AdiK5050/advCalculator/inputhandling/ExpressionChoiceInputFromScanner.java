@@ -26,10 +26,10 @@ public class ExpressionChoiceInputFromScanner implements ExpressionChoiceInput {
             if (choice < 1 || choice > 5) {
                 getUserInput();
             }
-            //sc.nextLine(); No idea why this is here???
+            sc.nextLine();
         } catch (InputMismatchException e) {
             System.out.println("Invalid Input!! Enter a valid Integer From 0 to 5...");
-            getUserInput(sc);
+            getUserInput();
         }
 
         return choice;

@@ -1,5 +1,7 @@
 package main.java.io.AdiK5050.advCalculator.inputhandling;
 
+import main.java.io.AdiK5050.advCalculator.inputhandling.interfaces.ExpressionHandler;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -16,13 +18,14 @@ public class ExpressionHandlerFromScanner implements ExpressionHandler {
     /**
      * @param sc this takes scanner object as argument to enable number input for the user.
      */
-    public MultiplicationInput(Scanner sc){
+    public ExpressionHandlerFromScanner(Scanner sc){
         this.sc = sc;
     }
 
     /**
      * This method parses the string input from the user to tokens of double type.
      */
+    @Override
     public void getToArr(){
         arr = arrDouble.stream().mapToDouble(Double :: doubleValue).toArray();
     }
@@ -31,6 +34,7 @@ public class ExpressionHandlerFromScanner implements ExpressionHandler {
      * Takes User Input.
      * This method takes user input in specified format such that number inputs are given then "stop" is passed as input to stop adding more inputs.
      */
+    @Override
     public void addElements(){
         boolean flag = true;
         int count = 0;
@@ -59,5 +63,10 @@ public class ExpressionHandlerFromScanner implements ExpressionHandler {
                 }
             }
         }
+    }
+
+    @Override
+    public double[] getArr() {
+        return arr;
     }
 }

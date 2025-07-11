@@ -1,7 +1,7 @@
 package main.java.io.AdiK5050.advCalculator.app;
 
-import main.java.io.AdiK5050.advCalculator.inputhandling.MultiplicationInput;
 import main.java.io.AdiK5050.advCalculator.inputhandling.interfaces.ExpressionChoiceInput;
+import main.java.io.AdiK5050.advCalculator.inputhandling.interfaces.ExpressionHandler;
 import main.java.io.AdiK5050.advCalculator.operators.*;
 import main.java.io.AdiK5050.advCalculator.utilities.ApplicationException;
 
@@ -9,15 +9,16 @@ import java.util.Scanner;
 
 public class ApplicationImpl implements Application {
     private final ExpressionChoiceInput expressionChoiceInput;
+    private final ExpressionHandler expressionHandler;
 
     public ApplicationImpl(ExpressionChoiceInput expressionChoiceInput,  ExpressionHandler expressionHandler) {
         this.expressionChoiceInput = expressionChoiceInput;
+        this.expressionHandler = expressionHandler;
     }
 
     @Override
     public double run() {
         try (Scanner sc = new Scanner(System.in)) {
-            MultiplicationInput objIn = new MultiplicationInput(sc);
             int choice;
 
             do {
@@ -57,6 +58,7 @@ public class ApplicationImpl implements Application {
                 }
             } while (choice != 0);
         }
+        return 0;
     }
 
     private double preformExpressionGetResult(ExpressionHandler objIn, Expression expression) throws ApplicationException {
