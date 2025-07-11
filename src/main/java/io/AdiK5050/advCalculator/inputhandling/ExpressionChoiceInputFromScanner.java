@@ -23,8 +23,8 @@ public class ExpressionChoiceInputFromScanner implements ExpressionChoiceInput {
 
         try {
             choice = sc.nextInt();
-            if (choice < 0 || choice > 5) {
-                getUserInput(sc);
+            if (choice < 0 || choice > 4) {
+                getUserInput();
             }
             //sc.nextLine(); No idea why this is here???
         } catch (InputMismatchException e) {
