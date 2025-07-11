@@ -30,25 +30,6 @@ public class MultiplicationInput {
     /**
      * Takes User Input.
      * This method takes user input in specified format such that number inputs are given then "stop" is passed as input to stop adding more inputs.
-     * Formats acceptable:-
-     * <p>
-     * 1 5 2 9 'enter key pressed'
-     * <p>
-     * 'enter key pressed
-     * <p>
-     * output
-     * <p>
-     * OR,
-     * <p>
-     * 50
-     * <p>
-     * 20
-     * <p>
-     * 90'enter key pressed'
-     * <p>
-     * 'enter key pressed'
-     * <p>
-     * output
      */
     public void addElements(){
         boolean flag = true;
