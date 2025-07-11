@@ -4,13 +4,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ExpressionChoiceInputFromScanner implements ExpressionChoiceInput {
+    private Scanner sc;
     private static final String MESSAGE_TO_USER = "\n" +
             "Press 1 to Add multiple numbers\n" +
             "Press 2 to Subtract multiple numbers\n" +
             "Press 3 to Divide multiple numbers\n" +
             "Press 4 to Multiply multiple numbers\n" +
-            "Press 5 to solve an expression \n" +
-            "Press 0 to exit";
+            "Press 5 to solve an expression";
+
+    public ExpressionChoiceInputFromScanner(Scanner sc) {
+        this.sc = sc;
+    }
 
     @Override
     public int getUserInput(Scanner sc) {
