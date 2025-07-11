@@ -1,11 +1,12 @@
-package io.AdiK5050.advCalculator.operators;
+package main.java.io.AdiK5050.advCalculator.operators;
 
-import io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
+import main.java.io.AdiK5050.advCalculator.utilities.ApplicationException;
+import main.java.io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
 
 /**
  * This class contains a method "sub()" which returns the difference of elements of the array passed as argument.
  */
-public class Subtraction {
+public class Subtraction implements Expression {
     /**
      * Returns the final result of subtraction
      * The Subtraction occurs with the logic that smaller element always gets subtracted from bigger one so the final answer will always be positive
@@ -29,19 +30,19 @@ public class Subtraction {
      * @throws MaximumInputReachedException user-defined exception.
      * @return double
      */
-    public double sub(double... arr) throws MaximumInputReachedException
-    {
+    @Override
+    public double preform(double... arr) throws ApplicationException {
         int i;
         double diff = 0;
         for(i = 0; i < arr.length; i++)
         {
             if(arr[i] > 100000.0)
-                    throw new MaximumInputReachedException();
-            else 
-                if(diff < arr[i])
-                    diff = arr[i] - diff;
-                else 
-                    diff = diff - arr[i];
+                throw new MaximumInputReachedException();
+            else
+            if(diff < arr[i])
+                diff = arr[i] - diff;
+            else
+                diff = diff - arr[i];
         }
         return diff;
     }

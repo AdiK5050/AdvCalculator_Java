@@ -1,7 +1,7 @@
-package io.AdiK5050.advCalculator.inputhandling;
+package main.java.io.AdiK5050.advCalculator.inputhandling;
 
 import java.util.*;
-import io.AdiK5050.advCalculator.utilities.InvalidPatternException;
+import main.java.io.AdiK5050.advCalculator.utilities.InvalidPatternException;
 /**
  * This class takes Expression Inputs as Strings then parse them into Numbers, Operators and Braces.
  * It stores the parsed Strings into Arraylist of type-String

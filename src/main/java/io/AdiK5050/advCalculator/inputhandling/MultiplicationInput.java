@@ -1,4 +1,4 @@
-package io.AdiK5050.advCalculator.inputhandling;
+package main.java.io.AdiK5050.advCalculator.inputhandling;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

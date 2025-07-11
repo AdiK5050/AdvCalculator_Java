@@ -1,11 +1,10 @@
-package io.AdiK5050.advCalculator.operators;
-
-import io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
+package main.java.io.AdiK5050.advCalculator.operators;
+import main.java.io.AdiK5050.advCalculator.utilities.ApplicationException;
+import main.java.io.AdiK5050.advCalculator.utilities.MaximumInputReachedException;
 /**
  * This class contains a method "add()" which returns the sum of elements of the array passed as argument.
  */
-public class Addition 
-{
+public class Addition implements Expression {
     /**
      * Returns the final result of addition
      * The Addition occurs simple and straight. Each element is added with the variable "sum" and "sum" stores the result.
@@ -15,8 +14,9 @@ public class Addition
      * @throws MaximumInputReachedException user-defined exception.
      * @return double
      */
-    public double add(double... arr) throws MaximumInputReachedException
-    {
+
+    @Override
+    public double preform(double... arr) throws ApplicationException {
         int i;
         double sum = 0;
         for(i = 0; i < arr.length; i++)
@@ -29,4 +29,3 @@ public class Addition
         return sum;
     }
 }
-
