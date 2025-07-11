@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ApplicationImpl implements Application {
     private final ExpressionChoiceInput expressionChoiceInput;
 
-    public ApplicationImpl(ExpressionChoiceInput expressionChoiceInput) {
+    public ApplicationImpl(ExpressionChoiceInput expressionChoiceInput,  ExpressionHandler expressionHandler) {
         this.expressionChoiceInput = expressionChoiceInput;
     }
 
