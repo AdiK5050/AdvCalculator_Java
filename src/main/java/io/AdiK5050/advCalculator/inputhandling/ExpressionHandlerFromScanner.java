@@ -7,11 +7,11 @@ import java.util.Scanner;
 /**
  * This class contains the code to take numbers user input and apply desired operation(add/subtract/multiply/divide).
  */
-public class MultiplicationInput {
-    public ArrayList<Double> arrDouble = new ArrayList<>();
+public class ExpressionHandlerFromScanner implements ExpressionHandler {
+    private ArrayList<Double> arrDouble = new ArrayList<>();
     
-    public double[] arr;
-    public Scanner sc;
+    private double[] arr;
+    private final Scanner sc;
 
     /**
      * @param sc this takes scanner object as argument to enable number input for the user.
