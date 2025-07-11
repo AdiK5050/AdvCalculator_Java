@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * This class contains the code to take numbers user input and apply desired operation(add/subtract/multiply/divide).
  */
-public class Input{
+public class MultiplicationInput {
     public ArrayList<Double> arrDouble = new ArrayList<>();
     
     public double[] arr;
@@ -16,7 +16,7 @@ public class Input{
     /**
      * @param sc this takes scanner object as argument to enable number input for the user.
      */
-    public Input(Scanner sc){
+    public MultiplicationInput(Scanner sc){
         this.sc = sc;
     }
 
