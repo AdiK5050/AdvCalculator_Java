@@ -26,30 +26,25 @@ public class ApplicationImpl implements Application {
                     switch (choice) {
                         case 1:
                             Addition objAdd = new Addition();
-                            preformExpressionGetResult(objIn, objAdd);
-                            break;
+                            return preformExpressionGetResult(expressionHandler, objAdd);
 
                         case 2:
                             Subtraction objSub = new Subtraction();
-                            preformExpressionGetResult(objIn, objSub);
-                            break;
+                            return preformExpressionGetResult(expressionHandler, objSub);
 
                         case 3:
                             Division objDiv = new Division();
-                            preformExpressionGetResult(objIn, objDiv);
-                            break;
+                            return preformExpressionGetResult(expressionHandler, objDiv);
 
                         case 4:
                             Multiplication objMul = new Multiplication();
-                            preformExpressionGetResult(objIn, objMul);
-                            break;
+                            return preformExpressionGetResult(expressionHandler, objMul);
 
                         case 5:
                             ExpressionInputEvaluation objPostfixEvaluation = new ExpressionInputEvaluation(sc);
                             objPostfixEvaluation.inputExpression();
                             objPostfixEvaluation.toPostfix();
-                            System.out.println("\nResult: " + objPostfixEvaluation.evaluateExpression());
-                            break;
+                            return objPostfixEvaluation.evaluateExpression();
 
                         case 0:
                             break;
@@ -64,9 +59,9 @@ public class ApplicationImpl implements Application {
         }
     }
 
-    private void preformExpressionGetResult(MultiplicationInput objIn, Expression expression) throws ApplicationException {
+    private double preformExpressionGetResult(ExpressionHandler objIn, Expression expression) throws ApplicationException {
         objIn.addElements();
         objIn.getToArr();
-        System.out.println(expression.preform(objIn.arr));
+        return expression.preform(objIn.getArr());
     }
 }
