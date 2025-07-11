@@ -15,7 +15,7 @@ public class ApplicationImpl implements Application {
     }
 
     @Override
-    public void run() {
+    public double run() {
         try (Scanner sc = new Scanner(System.in)) {
             MultiplicationInput objIn = new MultiplicationInput(sc);
             int choice;
