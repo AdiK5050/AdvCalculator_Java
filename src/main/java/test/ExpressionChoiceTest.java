@@ -5,6 +5,7 @@ import main.java.io.AdiK5050.advCalculator.inputhandling.interfaces.ExpressionCh
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ExpressionChoiceTest {
@@ -12,11 +13,15 @@ public class ExpressionChoiceTest {
     @Test
     public void expressionChoiceOneTest(){
         Scanner sc = new Scanner("0\n");
-
         ExpressionChoiceInput expressionChoiceInputFromScanner = new ExpressionChoiceInputFromScanner(sc);
-        int choice = expressionChoiceInputFromScanner.getUserInput();
 
-        Assertions.assertEquals(0, choice);
+        try{
+            int choice = expressionChoiceInputFromScanner.getUserInput();
+        }catch (NoSuchElementException e){
+            return;
+        }
+
+        Assertions.fail();
     }
 
     @Test
