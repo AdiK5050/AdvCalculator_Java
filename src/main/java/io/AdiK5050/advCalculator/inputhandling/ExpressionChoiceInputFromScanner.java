@@ -17,7 +17,7 @@ public class ExpressionChoiceInputFromScanner implements ExpressionChoiceInput {
     }
 
     @Override
-    public int getUserInput(Scanner sc) {
+    public int getUserInput() {
         int choice = 0;
         System.out.println(MESSAGE_TO_USER);
 
